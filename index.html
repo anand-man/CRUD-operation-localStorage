@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegistrationForm</title>
+    <!--font-awesome icon-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap styles link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Custom styles link -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">userManagement</a>
+
+            <div class="logo"><h4></h4></div>
+      </header>
+    <section class="main">
+        <div class="container-fluid row m-auto customContainer p-0">
+            <div class="actionArea col-md-3 bg-primary">
+                <div class="cardWrapper btnWrapper d-grid gap-2 w-100 mx-auto">
+                        
+                            <button class="calBtn btn btn-secondary w-100" id="addUser" onclick="userManagement.createUserBtn()">Add user</button>
+                            <button class="calBtn btn btn-info w-100" id="showUser" onclick="userManagement.showUserBtn()">Show users</button>
+                </div>
+            </div>
+            <div class="userArea col-md-9">
+                <h2 class="text-primary">Welcome to user dashbord. :)</h2>
+                <div class="cardWrapper userForm">
+                    <h3>User form</h3>
+                    <form class="needs-validation" name="regForm" autocomplete="off">
+                        <div class="form-group row mb-2 singleInp">
+                            <label for="uName" class="col-sm-2 col-form-label">Name:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="uName" placeholder="User name" name="userName">
+                                <div class="valid-feedback">
+                                    Looks good!
+                                  </div>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-2 singleInp">
+                            <label for="uEmail" class="col-sm-2 col-form-label">Email:</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" id="uEmail" placeholder="Email" name="userEmail">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-2 singleInp">
+                            <label for="uContact" class="col-sm-2 col-form-label">Contact:</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control w-50" id="uContact" placeholder="Enter Contact"
+                                    name="userContact">
+                            </div>
+                        </div>
+                        <div class="form-group row mb-2 singleInp">
+                            <label for="uAge" class="col-sm-2 col-form-label">Age:</label>
+                            <div class="col-sm-10 w-auto">
+                                <!-- <input type="number" class="form-control" id="uAge" placeholder="Enter Age" name="userAge"> -->
+                                <select class="form-select" id="uAge" name="userAge" aria-label="Default select example">
+                                    <option selected>Choose your age</option>
+                                    <option value="18-30">18  - 30</option>
+                                    <option value="30-45">30 - 45</option>
+                                    <option value="45>=">45 - and above</option>
+                                  </select>
+                            </div>
+                        </div>
+                        <fieldset class="form-group">
+                            <div class="row align-items-center">
+                                <legend class="col-form-label col-sm-2">Gender</legend>
+                                <div class="col-sm-10 d-flex">
+                                    <div class="form-check me-4">
+                                        <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                                        <label class="form-check-label" for="male">
+                                            Male
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="female"
+                                            value="female">
+                                        <label class="form-check-label" for="female">
+                                            Female
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset class="form-group mb-1">
+                            <div class="row align-items-center">
+                                <legend class="col-form-label col-sm-2">Courses:</legend>
+                                <div class="col-sm-10 d-flex">
+                                    <div class="form-check me-4">
+                                        <input class="form-check-input courses" type="checkbox" value="" id="reactCourse"
+                                            name="courses">
+                                        <label class="form-check-label" for="reactCourse">
+                                            React
+                                        </label>
+                                    </div>
+                                    <div class="form-check me-4">
+                                        <input class="form-check-input courses" type="checkbox" value="" id="nodejsCourse"
+                                            name="courses">
+                                        <label class="form-check-label" for="nodejsCourse">
+                                            NodeJS
+                                        </label>
+                                    </div>
+                                    <div class="form-check me-4">
+                                        <input class="form-check-input courses" type="checkbox" value="" id="mongoCourse"
+                                            name="courses">
+                                        <label class="form-check-label" for="mongoCourse">
+                                            MongoDB
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+    
+                        <div class="form-group row mb-4 singleInp">
+                            <label for="uAddress" class="col-sm-2 col-form-label">Address:</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" id="uAddress" rows="3" name="userAddress"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-6">
+                                <button type="submit" class="btnDefault btnBlue w-100" id="subBtn">Register</button>
+                            </div>
+                            <div class="col-sm-6 canButton text-end">
+                                <button  class="btnDefault btnRed w-100" id="canBtn" onclick="event.preventDefault(); userManagement.cancelBtn()">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+    
+                <div class="cardWrapper userData">
+                    <h3>Users Record</h3>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered table-striped">
+                            <thead>
+                              <tr class="text-center table-info">
+                                <th scope="col">Sl.N.</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Contact</th>
+                                <th scope="col">Courses</th>
+                                <th scope="col">Action</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container-fluid">
+          <div class="logo"><p>User Management</p></div>
+    </footer>
+
+    <!-- Bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="scripts.js"></script>
+</body>
+
+</html>

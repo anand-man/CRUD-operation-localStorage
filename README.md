@@ -8,4 +8,4 @@ Hi friends, Anand here
 
 # You can find reusibility of methods for getting the values from form and reseting the form fields also.
 
-# Fill free to connect with me through my Email : mksaarya@gmail.com if you find any dificulties in code.
+# Feel free to reach out me through my Email : mksaarya@gmail.com if you find any dificulties in code.
